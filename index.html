@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/skeleton.css">
         <link rel="stylesheet" href="css/registration_number.css">
+        <link rel="stylesheet" href="css/animate.css">
         <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link rel="icon" type="image/png" href="images/android-icon-36x36.png">
@@ -16,23 +17,26 @@
         <div class="container box">
 <!--------------------------div1------------------------>
             <div class="row">
-                <div class="twelve columns div1">
+                <div id="div1" class="twelve columns div1 animated slideInDown">
                     <h1 class="header">Registration Numbers</h1>
                 </div>
             </div>
             <hr>
 <!--------------------------div2------------------------>
             <div class="row">
-                <div class="twelve columns div2">
+                <div class="twelve columns div2 animated slideInLeft">
                     <h4 class="four columns">Registration number:</h4>
+                    <form>
                     <input class="five columns nameInputField" type="text" placeholder="Enter Registration number" required>
+                    
                     <button class="button-primary three columns greetBtn" type="button" name="button" >ADD</button>
+                    </form>
                 </div>
             </div>
             <hr>
 <!-------------------------div3-------------------------->
             <div class="row">
-                <div class="twelve columns div3">
+                <div class="twelve columns div3 animated slideInRight">
                     <div class="three columns">
                         <label>
                             <input type="radio" name="place" class="place" value="CA">
@@ -63,9 +67,17 @@
                 </div>
             </div>
             <hr>
+<!-------------------------------div4------------------------------>
+            <div class="row">
+                <div class="twelve columns div4 animated flipInY">
+                    <h5 class="title">stored reg numbers</h5>
+
+                    
+                </div>
+            </div>
 
         </div>
-        <!----------------------footer--------------------------->
+<!-----------------------------footer--------------------------->
             <div class="row">
                 <div class="twelve columns">
                     <footer>
@@ -73,5 +85,8 @@
                     </footer>
                 </div>
             </div>
+        
+        
+        <script src="js/registration_number.js"></script>
     </body>
 </html>

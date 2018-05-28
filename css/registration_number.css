@@ -1,16 +1,16 @@
 .box {
-  padding: 0.75em;
-  border-radius : 0.5em;
-  border : 2px solid #ddd;
-  height: auto;
-  margin-bottom: 1em;
-  box-shadow: 10px 10px #5a5858;
-  
+    padding: 0.75em;
+    border-radius: 0.5em;
+    border: 2px solid #ddd;
+    height: auto;
+    margin-bottom: 1em;
+    box-shadow: 10px 10px #5a5858;
+
 }
 
 .div1 {
     background-color: silver;
-    border-radius : 0.5em;
+    border-radius: 0.5em;
 }
 
 .header {
@@ -18,12 +18,12 @@
 }
 
 .div2 {
-/*    background-color: aquamarine;*/
+    /*    background-color: aquamarine;*/
     animation-delay: 1s;
 }
 
 .div3 {
-/*    background-color: aqua;*/
+    /*    background-color: aqua;*/
     animation-delay: 2s;
 }
 

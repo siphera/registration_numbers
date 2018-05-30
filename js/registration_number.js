@@ -3,8 +3,7 @@ var plateInput = document.querySelector(".plateInputField"),
     list = document.querySelector("#list");
 
 function reg_Numbers(data) {
-    var storedPlates = {},
-        displayPlates = "",
+    var storedPlates = {};
         
     
-}
+};

@@ -1,3 +1,3 @@
 var plateInput = document.querySelector(".plateInputField"),
     addBtn = document.querySelector(".regAddBtn"),
-    list = document.querySelector("#list");
+    list = document.querySelector(".regPlatesDisplay");

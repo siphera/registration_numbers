@@ -29,9 +29,11 @@
             <div class="twelve columns div2 animated slideInLeft">
                 <h4 class="four columns">Registration number:</h4>
                 <form>
-                    <input class="five columns plateInputField" type="text" placeholder="Enter Registration number" required/>
+                    <input id="item" class="five columns plateInputField" type="text" placeholder="Enter Registration number" required>
 
                     <button class="button-primary three columns regAddBtn" type="button" name="button">ADD</button>
+                    
+                    <button class="button-primary three columns clearBtn" type="button" name="button">Clear All</button>
                 </form>
             </div>
         </div>
@@ -71,10 +73,11 @@
         <hr>
         <!-------------------------------div4------------------------------>
         <div class="row">
-            <div class="twelve columns div4 animated flipInY">
+            <div class="div4 animated flipInY">
                 <h5 class="title">stored reg numbers</h5>
+                
 
-                <ul class="regPlatesDisplay">
+                <ul>
                 <!---------list will show here-->
                 </ul>
             </div>

@@ -20,7 +20,7 @@ const liMaker = (text) => {
 
 addBtn.addEventListener('click', function (e) {
   //prevent form from default action
-  e.preventDefault();
+//  e.preventDefault();
 
 // push new value to the array
   itemsArray.push(plateInput.value);

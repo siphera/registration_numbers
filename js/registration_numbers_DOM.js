@@ -2,6 +2,7 @@ const plateInput = document.querySelector(".plateInputField"),
     addBtn = document.querySelector(".regAddBtn"),
     clearBtn = document.querySelector(".clearBtn"),
     ul = document.querySelector('ul'),
+    filter = document.querySelector(".town-filter")
     displayOutput = document.querySelector(".regPlatesDisplay");
 
 

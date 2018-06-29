@@ -22,13 +22,21 @@ function addReg() {
     itemsArray.push(plateInput.value);
     localStorage.setItem('items', JSON.stringify(itemsArray));
     liMaker(plateInput.value);
-    //auto erase input field
-//    plateInput.value = "";
+//    auto erase input field
+    plateInput.value = "";
 };
 
 // loop to display stored list to user interface
-data.forEach(item => {
-    liMaker(item);
+
+//data.forEach(item => {
+//    liMaker(item);
+//});
+
+window.addEventListener('load', function () {
+    if (itemsArray.length > 0)
+        for (var i = 0; i < itemsArray.length; i++) {
+            liMaker(itemsArray[i]);
+        }
 });
 
 

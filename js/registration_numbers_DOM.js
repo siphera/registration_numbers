@@ -5,7 +5,7 @@ let plateInput = document.querySelector(".plateInputField"),
     filterTown = document.querySelector('.select-town')
 
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
-var registration = Registration(itemsArray);
+var registration = reg_numFF(itemsArray);
 
 // function that creates an li element
 function liMaker(text) {
@@ -45,11 +45,11 @@ clearBtn.addEventListener('click', function () {
 
 
 filterTown.addEventListener('change', function() {
-  let filterData = registration.filterBy(filterTown.value);
+  let filt = registration.townFilter(filterTown.value);
   display.innerHTML = "";
-  if (filterData.length > 0) {
-    for (var i = 0; i< filterData.length; i++) {
-      liMaker(filterData[i]);
+  if (filt.length > 0) {
+    for (var i = 0; i< filt.length; i++) {
+      liMaker(filt[i]);
     }
   }
 });

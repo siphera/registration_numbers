@@ -1,8 +1,8 @@
-const plateInput = document.querySelector(".plateInputField"),
+let plateInput = document.querySelector(".plateInputField"),
     addBtn = document.querySelector(".regAddBtn"),
     clearBtn = document.querySelector(".clearBtn"),
-    ul = document.querySelector('ul'),
-    filter = document.querySelector(".town-filter")
+    display = document.querySelector('ul'),
+    filterTown = document.querySelector('.select-town')
 
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
@@ -11,27 +11,22 @@ const data = JSON.parse(localStorage.getItem('items'));
 
 // function that creates an li element
 function liMaker(text) {
-    const li = document.createElement('li');
-    li.textContent = text;
-    ul.appendChild(li);
+    let li = document.createElement('li');
+    li.innerText = text;
+    display.appendChild(li);
+    //    auto erase input field
+    plateInput.value = "";
 }
 
-    
+
 function addReg() {
     // push new value to the array
     itemsArray.push(plateInput.value);
     localStorage.setItem('items', JSON.stringify(itemsArray));
     liMaker(plateInput.value);
-//    auto erase input field
-    plateInput.value = "";
 };
 
 // loop to display stored list to user interface
-
-//data.forEach(item => {
-//    liMaker(item);
-//});
-
 window.addEventListener('load', function () {
     if (itemsArray.length > 0)
         for (var i = 0; i < itemsArray.length; i++) {
@@ -40,18 +35,23 @@ window.addEventListener('load', function () {
 });
 
 
-addBtn.addEventListener('click', function () {
-    addReg();
-})
-
-filter.addEventListener('click', function () {
-    checkLocation();
-})
+addBtn.addEventListener('click', addReg);
 
 clearBtn.addEventListener('click', function () {
-    //  window.location.reload();
+    window.location.reload();
     localStorage.clear();
-    while (ul.firstChild) {
-        ul.removeChild(ul.firstChild);
+    while (display.firstChild) {
+        display.removeChild(display.firstChild);
     }
+});
+
+
+filterTown.addEventListener('change', function() {
+  let filterData = registration.filterBy(filterTown.value);
+  display.innerHTML = "";
+  if (filterData.length > 0) {
+    for (var i = 0; i< filterData.length; i++) {
+      liMaker(filterData[i]);
+    }
+  }
 });

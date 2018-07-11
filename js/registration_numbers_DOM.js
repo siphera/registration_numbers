@@ -33,7 +33,7 @@ function addReg() {
         liMaker(plateInput.value);
     }else {
         let map = Object.keys(itemsArray);
-        map.indexOf(input) != -1 ? error.innerHTML = 'Registration plate already exist' : error.innerHTML = 'Type in new registration plate';
+        map.indexOf(input) != -1 ? error.innerHTML = 'Registration plate already exist' : error.innerHTML = 'Type in a new registration plate';
     }
 };
 

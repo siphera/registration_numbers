@@ -75,3 +75,9 @@ li {
 .rad {
     margin-left: 75px;
 }
+
+.error {
+    text-align: center;
+    color: red;
+    font-weight: 600;
+}

@@ -2,7 +2,8 @@ let plateInput = document.querySelector(".plateInputField"),
     addBtn = document.querySelector(".regAddBtn"),
     clearBtn = document.querySelector(".clearBtn"),
     display = document.querySelector('ul'),
-    filterTown = document.querySelector('.select-town')
+    filterTown = document.querySelector('.select-town'),
+    error = document.querySelector('.error')
 
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 var registration = reg_numFF(itemsArray);
@@ -18,10 +19,22 @@ function liMaker(text) {
 
 
 function addReg() {
-    // push new value to the array
-    itemsArray.push(plateInput.value);
-    localStorage.setItem('items', JSON.stringify(itemsArray));
-    liMaker(plateInput.value);
+//    if (plateInput.value.length > 0) {
+//        // push new value to the array
+//        itemsArray.push(plateInput.value);
+//        localStorage.setItem('items', JSON.stringify(itemsArray));
+//        liMaker(plateInput.value);
+//    }
+    var input = plateInput.value.toUpperCase();
+    if (registration.setReg(input)) {
+//        // push new value to the array
+        itemsArray.push(plateInput.value);
+        localStorage.setItem('items', JSON.stringify(itemsArray));
+        liMaker(plateInput.value);
+    }else {
+        let map = Object.keys(itemsArray);
+        map.indexOf(input) != -1 ? error.innerHTML = 'Registration plate already exist' : error.innerHTML = 'Type in new registration plate';
+    }
 };
 
 // loop to display stored list to user interface
@@ -44,12 +57,12 @@ clearBtn.addEventListener('click', function () {
 });
 
 
-filterTown.addEventListener('change', function() {
-  let filt = registration.townFilter(filterTown.value);
-  display.innerHTML = "";
-  if (filt.length > 0) {
-    for (var i = 0; i< filt.length; i++) {
-      liMaker(filt[i]);
+filterTown.addEventListener('change', function () {
+    let filt = registration.townFilter(filterTown.value);
+    display.innerHTML = "";
+    if (filt.length > 0) {
+        for (var i = 0; i < filt.length; i++) {
+            liMaker(filt[i]);
+        }
     }
-  }
 });

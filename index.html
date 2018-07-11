@@ -26,55 +26,61 @@
         <hr>
         <!--------------------------div2------------------------>
         <div class="row">
-            <div class="twelve columns div2 animated slideInLeft">
-                <h4 class="four columns">Registration number:</h4>
-                <form>
-                    <input id="item" class="five columns plateInputField" type="text" placeholder="Enter Registration number" required>
-
-                    <button class="button-primary three columns regAddBtn" type="button" name="button">ADD</button>
-
-                    <button class="button-primary three columns clearBtn" type="button" name="button">Clear All</button>
-                </form>
+            <div class="twelve columns">
+                <div class="error">
+<!--    -------------error message will dill displaay here---------->
+                </div>
             </div>
-        </div>
-        <hr>
-        <!-------------------------div3-------------------------->
-        <div class="row">
-            <label for="">Select Town:</label>
-            <select class="select-town" name="select-town">
+            <div class="row">
+                <div class="twelve columns div2 animated slideInLeft">
+                    <h4 class="four columns">Registration number:</h4>
+                    <form>
+                        <input id="item" class="five columns plateInputField" type="text" placeholder="Enter Registration number" required>
+
+                        <button class="button-primary regAddBtn" type="button" name="button">ADD</button>
+
+                        <button class="button-primary clearBtn" type="button" name="button">Clear</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <!-------------------------div3-------------------------->
+            <div class="row">
+                <label for="">Select Town:</label>
+                <select class="select-town" name="select-town">
             <option value="ALL">All Towns</option>
-            <option value="CA">Cape Town(CA)</option>
+            <option value="CA ">Cape Town(CA)</option>
             <option value="CJ">Paarl(CJ)</option>
             <option value="CAW">George(CAW)</option>
             <option value="CL">Stellenbosch(CL)</option>
           </select>
+            </div>
+            <hr>
+            <!-------------------------------div4------------------------------>
+            <div class="row">
+                <div class="div4 animated flipInY">
+                    <h5 class="title">Stored Reg Numbers:</h5>
+
+
+                    <ul>
+                        <!---------list will show here-->
+                    </ul>
+                </div>
+            </div>
+
         </div>
-        <hr>
-        <!-------------------------------div4------------------------------>
+        <!-----------------------------footer--------------------------->
         <div class="row">
-            <div class="div4 animated flipInY">
-                <h5 class="title">Stored Reg Numbers:</h5>
-
-
-                <ul>
-                    <!---------list will show here-->
-                </ul>
+            <div class="twelve columns">
+                <footer>
+                    <p>Developed by Siphenkosi Salman &copy; 2018</p>
+                </footer>
             </div>
         </div>
 
-    </div>
-    <!-----------------------------footer--------------------------->
-    <div class="row">
-        <div class="twelve columns">
-            <footer>
-                <p>Developed by Siphenkosi Salman &copy; 2018</p>
-            </footer>
-        </div>
-    </div>
 
-
-    <script src="js/registration_number.js" charset="utf-8"></script>
-    <script src="js/registration_numbers_DOM.js" charset="utf-8"></script>
+        <script src="js/registration_number.js" charset="utf-8"></script>
+        <script src="js/registration_numbers_DOM.js" charset="utf-8"></script>
 </body>
 
 </html>

@@ -11,7 +11,7 @@ function reg_numFF(stored) {
 
     function setReg(num) {
         if (plateList[num] === undefined && (num.startsWith("CA ") ||
-                num.startsWith("CL") || num.startsWith("CJ") || num.startsWith("CAW"))) {
+                num.startsWith("CL ") || num.startsWith("CJ ") || num.startsWith("CAW "))) {
             regist = num;
             plateList[regist] = 0;
             return true;

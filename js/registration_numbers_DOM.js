@@ -8,6 +8,13 @@ let plateInput = document.querySelector(".plateInputField"),
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 var registration = reg_numFF(itemsArray);
 
+
+//----------make input convert to uppecase--------
+var input = document.getElementsByTagName("input")[0]
+input.oninput = function() {
+  input.value = input.value.toUpperCase()
+}
+
 // function that creates an li element
 function liMaker(text) {
     let li = document.createElement('li');
@@ -33,7 +40,7 @@ function addReg() {
         liMaker(plateInput.value);
     }else {
         let map = Object.keys(itemsArray);
-        map.indexOf(input) != -1 ? error.innerHTML = 'Registration plate already exist' : error.innerHTML = 'Type in a new registration plate';
+        map.indexOf(input) != -1 ? error.innerHTML = 'Registration plate already exist' : error.innerHTML = 'Type in a new registration plate (e.g CA 123-456)';
     }
 };
 

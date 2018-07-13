@@ -9,10 +9,10 @@ let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem
 var registration = reg_numFF(itemsArray);
 
 
-//----------make input convert to uppecase--------
+//----------restrict input to only take uppercase--------
 var input = document.getElementsByTagName("input")[0]
-input.oninput = function() {
-  input.value = input.value.toUpperCase()
+input.oninput = function () {
+    input.value = input.value.toUpperCase()
 }
 
 // function that creates an li element
@@ -26,21 +26,23 @@ function liMaker(text) {
 
 
 function addReg() {
-//    if (plateInput.value.length > 0) {
-//        // push new value to the array
-//        itemsArray.push(plateInput.value);
-//        localStorage.setItem('items', JSON.stringify(itemsArray));
-//        liMaker(plateInput.value);
-//    }
+    //    if (plateInput.value.length > 0) {
+    //        // push new value to the array
+    //        itemsArray.push(plateInput.value);
+    //        localStorage.setItem('items', JSON.stringify(itemsArray));
+    //        liMaker(plateInput.value);
+    //    }
     var input = plateInput.value.toUpperCase();
     if (registration.setReg(input)) {
-//        // push new value to the array
+        
+// push new value to the array
         itemsArray.push(plateInput.value);
         localStorage.setItem('items', JSON.stringify(itemsArray));
         liMaker(plateInput.value);
-    }else {
-        let map = Object.keys(itemsArray);
-        map.indexOf(input) != -1 ? error.innerHTML = 'Registration plate already exist' : error.innerHTML = 'Type in a new registration plate (e.g CA 123-456)';
+    } else if (plateInput.value === "") {
+        error.innerHTML = "Type in a new registration plate (e.g CA 123-456)";
+    } else if (registration.setReg(input) != -1) {
+        error.innerHTML = "Number plate already exist";
     }
 };
 

@@ -26,15 +26,8 @@ function liMaker(text) {
 
 
 function addReg() {
-    //    if (plateInput.value.length > 0) {
-    //        // push new value to the array
-    //        itemsArray.push(plateInput.value);
-    //        localStorage.setItem('items', JSON.stringify(itemsArray));
-    //        liMaker(plateInput.value);
-    //    }
     var input = plateInput.value.toUpperCase();
     if (registration.setReg(input)) {
-        
 // push new value to the array
         itemsArray.push(plateInput.value);
         localStorage.setItem('items', JSON.stringify(itemsArray));

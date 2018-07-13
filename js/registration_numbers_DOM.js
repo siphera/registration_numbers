@@ -34,12 +34,12 @@ function addReg() {
         error.classList.add("green")
     } else if (plateInput.value === "") {
         error.innerHTML = "Type in a new registration plate (e.g CA 123-456)";
-    } else if (registration.setReg(input) != -1) {
-        error.innerHTML = "Number plate already exist";
         error.classList.remove("green")
-    } else {
-        error.innerHTML = ""
-    }
+    } else if (registration.setReg(input) != -1) {
+        error.innerHTML = "";
+        error.classList.remove("green")
+        plateInput.value = "";
+    } 
 };
 
 //--------loop to display stored list to user interface--------

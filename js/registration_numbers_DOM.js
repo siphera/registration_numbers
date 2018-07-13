@@ -30,10 +30,15 @@ function addReg() {
         itemsArray.push(plateInput.value);
         localStorage.setItem('items', JSON.stringify(itemsArray));
         liMaker(plateInput.value);
+        error.innerHTML = "Registration plate added"
+        error.classList.add("green")
     } else if (plateInput.value === "") {
         error.innerHTML = "Type in a new registration plate (e.g CA 123-456)";
     } else if (registration.setReg(input) != -1) {
         error.innerHTML = "Number plate already exist";
+        error.classList.remove("green")
+    } else {
+        error.innerHTML = ""
     }
 };
 

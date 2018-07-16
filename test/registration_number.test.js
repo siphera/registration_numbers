@@ -1,36 +1,39 @@
 describe('Registration Numbers Application Tests', function () {
-    it('should return registration number that starts with "CA" only', function () {
-        let registration = reg_numFF();
+    it('should return true if registration plate starts with "CA "', function () {
+        var registration = reg_numFF();
 
-        registration.setReg("CA 123-456");
-        assert.equal(registration.getReg(), "CA 123-456");
+        var  check =  registration.setReg("CA ");
+        assert.deepEqual(check, true);
     });
+    
+    it('should return false if registration plate starts with "GP "', function () {
+        var registration = reg_numFF();
 
-    it('should return registration number that starts with "CL" only', function () {
-        let registration = reg_numFF();
-
-        registration.setReg("CL 456-123");
-        assert.equal(registration.getReg(), "CL 456-123");
-
+        var  check =  registration.setReg("GP ");
+        assert.deepEqual(check, false);
     });
+    
+    it('should return true if registration plate starts with "CAW "', function () {
+        var registration = reg_numFF();
 
-    it('should return registration number that starts with "CJ" only', function () {
-        let registration = reg_numFF();
-
-        registration.setReg("CJ 456-123");
-        assert.equal(registration.getReg(), "CJ 456-123");
-
+        var  check =  registration.setReg("CAW ");
+        assert.deepEqual(check, true);
     });
+    
+    it('should return true if registration plate starts with "CL "', function () {
+        var registration = reg_numFF();
 
-    it('should return registration number that starts with "CAW" only', function () {
-        let registration = reg_numFF();
-
-        registration.setReg("CAW 456-123");
-        assert.equal(registration.getReg(), "CAW 456-123");
-
+        var  check =  registration.setReg("CL ");
+        assert.deepEqual(check, true);
     });
-})
+    
+    it('should return true if registration plate starts with "CJ "', function () {
+        var registration = reg_numFF();
 
+        var  check =  registration.setReg("CA ");
+        assert.deepEqual(check, true);
+    });
+});
 //------------------------------------------------
 
 describe('Testing the filter', function () {
@@ -66,7 +69,9 @@ describe('Testing the filter', function () {
 
         registration.setReg("CAW 123-456");
         registration.setReg("CAW 321-456");
+        registration.setReg("CL 123-321");
         registration.setReg("CAW 123-321");
+        
         assert.deepEqual(registration.townFilter("CAW"), ["CAW 123-456","CAW 321-456","CAW 123-321"]);
     });
     

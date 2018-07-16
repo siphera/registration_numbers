@@ -30,7 +30,7 @@ describe('Registration Numbers Application Tests', function () {
     it('should return true if registration plate starts with "CJ "', function () {
         var registration = reg_numFF();
 
-        var  check =  registration.setReg("CA ");
+        var  check =  registration.setReg("CJ ");
         assert.deepEqual(check, true);
     });
 });
